@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         connect = findViewById(R.id.connect);
         txt = findViewById(R.id.txt);
         ip = findViewById(R.id.ip);
-        port = findViewById(R.id.port);
 
 
         connect.setOnClickListener(new View.OnClickListener() {
@@ -40,9 +39,16 @@ public class MainActivity extends AppCompatActivity {
                     public void run() {
                         try {
                             System.out.println("Inside");
-                            Socket socket = new Socket(ip.getText().toString(), Integer.parseInt(port.getText().toString()));
+                            Socket socket = new Socket(ip.getText().toString(), 666);
                             DataOutputStream DOS = new DataOutputStream(socket.getOutputStream());
-                            DOS.writeChars(value);
+                            while (!socket.isClosed()){
+
+                                DOS.writeChars(value);
+                                socket.close();
+
+                            }
+                            DOS.flush();
+                            DOS.close();
                         } catch (UnknownHostException e) {
                             e.printStackTrace();
                         } catch (IOException e) {

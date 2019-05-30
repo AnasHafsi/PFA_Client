@@ -21,8 +21,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.871" />
+        app:layout_constraintTop_toBottomOf="@+id/txt" />
 
     <EditText
         android:id="@+id/txt"
@@ -30,36 +29,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="92dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/text_to_send"
         android:inputType=""
-        app:layout_constraintBottom_toTopOf="@+id/connect"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:targetApi="o" />
-
-    <EditText
-        android:id="@+id/port"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="Port"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/ip"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ip"
         tools:targetApi="o" />
 
     <EditText
@@ -68,16 +47,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="Ip address"
         android:inputType=""
-        app:layout_constraintBottom_toTopOf="@+id/txt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/port"
+        app:layout_constraintTop_toTopOf="parent"
         tools:targetApi="o" />
 
 </android.support.constraint.ConstraintLayout>

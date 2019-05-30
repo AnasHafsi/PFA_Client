@@ -2,4 +2,5 @@
     <string name="app_name">PFAv3.1</string>
     <string name="text_to_send">value to send</string>
     <string name="connect">Rak Tmma</string>
+    <string name="title_activity_message">Message</string>
 </resources>
