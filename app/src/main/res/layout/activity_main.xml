@@ -8,24 +8,24 @@
 
     <Button
         android:id="@+id/connect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="104dp"
+        android:layout_height="105dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/connect"
         android:onClick="lance"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/connect"
+        app:layout_constraintBottom_toBottomOf="@+id/size"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt" />
+        app:layout_constraintTop_toTopOf="@+id/ip" />
 
     <EditText
-        android:id="@+id/txt"
+        android:id="@+id/size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -35,9 +35,27 @@
         android:layout_marginRight="8dp"
         android:autofillHints=""
         android:ems="10"
+        android:hint="size"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/connect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt"
+        tools:targetApi="o" />
+
+    <EditText
+        android:id="@+id/txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:autofillHints=""
+        android:ems="10"
         android:hint="@string/text_to_send"
         android:inputType=""
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/connect"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ip"
         tools:targetApi="o" />
@@ -48,16 +66,18 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="176dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="Ip address"
         android:inputType=""
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/connect"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:targetApi="o" />
+
+
 
 </android.support.constraint.ConstraintLayout>

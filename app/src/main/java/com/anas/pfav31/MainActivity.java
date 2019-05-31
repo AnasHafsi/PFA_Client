@@ -1,47 +1,41 @@
 package com.anas.pfav31;
 
-
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
 import java.io.BufferedWriter;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.net.InetAddress;
-import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class MainActivity extends AppCompatActivity {
-    private Socket sc;
-
+    public String sendStr ="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
     public void lance(View view) {
-
-        EditText txt = (EditText) findViewById(R.id.txt);
+        EditText txt = findViewById(R.id.txt);
         final String str = txt.getText().toString();
-        System.out.println("Anaaaas");
-        Thread th =new Thread(new Runnable() {
+        EditText ip = findViewById(R.id.ip);
+        final String ip_a =ip.getText().toString();
+        EditText sz = findViewById(R.id.size);
+        final int size = Integer.parseInt(String.valueOf(sz.getText()));
+
+        Thread th = new Thread(new Runnable() {
             @Override
             public void run() {
-                System.out.println("Saaaa7bi");
                 try {
-                    Socket sc = new Socket("10.0.2.2", 666);
+                    Socket sc = new Socket(ip_a, 666);
                     BufferedWriter writer = new BufferedWriter(
                             new OutputStreamWriter(sc.getOutputStream()));
-                    // Write output
-                    writer.write(str);
+                    sendStr=size + ";" +str;
+                    //0000100000000010000000001000000000100000000010000000000000000000100000000010000000001000000000000000
+                    writer.write(sendStr);
                     writer.flush();
                     writer.close();
                     sc.close();
