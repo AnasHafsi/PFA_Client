@@ -1,66 +1,59 @@
 package com.anas.pfav31;
 
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.io.BufferedWriter;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.net.InetAddress;
+import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class MainActivity extends AppCompatActivity {
-    private Button connect;
-    private EditText txt;
-    private EditText ip;
-    private EditText port;
+    private Socket sc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
+    }
 
-        connect = findViewById(R.id.connect);
-        txt = findViewById(R.id.txt);
-        ip = findViewById(R.id.ip);
+    public void lance(View view) {
 
-
-        connect.setOnClickListener(new View.OnClickListener() {
+        EditText txt = (EditText) findViewById(R.id.txt);
+        final String str = txt.getText().toString();
+        System.out.println("Anaaaas");
+        Thread th =new Thread(new Runnable() {
             @Override
-            public void onClick(View v) {
-                final String value = txt.getText().toString();
-                System.out.println("Out of it");
-                Thread th = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            System.out.println("Inside");
-                            Socket socket = new Socket(ip.getText().toString(), 666);
-                            DataOutputStream DOS = new DataOutputStream(socket.getOutputStream());
-                            while (!socket.isClosed()){
+            public void run() {
+                System.out.println("Saaaa7bi");
+                try {
+                    Socket sc = new Socket("10.0.2.2", 666);
+                    BufferedWriter writer = new BufferedWriter(
+                            new OutputStreamWriter(sc.getOutputStream()));
+                    // Write output
+                    writer.write(str);
+                    writer.flush();
+                    writer.close();
+                    sc.close();
 
-                                DOS.writeChars(value);
-                                socket.close();
-
-                            }
-                            DOS.flush();
-                            DOS.close();
-                        } catch (UnknownHostException e) {
-                            e.printStackTrace();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-
-                    }
-                });
-                th.start();
+                } catch (UnknownHostException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
-
+        th.start();
     }
 
 }
