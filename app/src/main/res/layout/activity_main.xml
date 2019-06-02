@@ -19,7 +19,7 @@
         android:layout_marginBottom="8dp"
         android:onClick="lance"
         android:text="@string/connect"
-        app:layout_constraintBottom_toBottomOf="@+id/end"
+        app:layout_constraintBottom_toTopOf="@+id/end"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.972"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +45,7 @@
 
     <EditText
         android:id="@+id/start"
-        android:layout_width="wrap_content"
+        android:layout_width="97dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -55,32 +55,31 @@
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/start"
-        app:layout_constraintEnd_toStartOf="@+id/connect"
+        app:layout_constraintEnd_toStartOf="@+id/end"
+        app:layout_constraintHorizontal_bias="0.939"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/size"
         tools:targetApi="o" />
 
     <EditText
         android:id="@+id/end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_width="101dp"
+        android:layout_height="44dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/end"
+        android:inputType=""
         app:layout_constraintEnd_toStartOf="@+id/connect"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/start"
+        app:layout_constraintTop_toBottomOf="@+id/size"
         tools:targetApi="o" />
 
     <EditText
         android:id="@+id/txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="215dp"
+        android:layout_height="155dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -89,7 +88,7 @@
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/text_to_send"
-        android:inputType=""
+        android:inputType="none"
         android:text="@string/textTS"
         app:layout_constraintEnd_toStartOf="@+id/connect"
         app:layout_constraintStart_toStartOf="parent"
@@ -115,6 +114,20 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:targetApi="o" />
 
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/switch2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toEndOf="@+id/end"
+        app:layout_constraintTop_toBottomOf="@+id/size" />
 
 
 </android.support.constraint.ConstraintLayout>

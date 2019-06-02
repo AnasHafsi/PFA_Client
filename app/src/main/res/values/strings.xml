@@ -5,8 +5,9 @@
     <string name="title_activity_message">Message</string>
     <string name="start">start</string>
     <string name="end">end</string>
-    <string name="textTS">000010000000001000000000100000000010000000001000000000000000000010000000001000000000100000000000000</string>
+    <string name="textTS">0000100000000010000000001000000000100000000010000000000000000000100000000010000000001000000000000000</string>
     <string name="ipTxt">10.0.2.2</string>
     <string name="HintIP">ip address</string>
     <string name="sizeHint">size</string>
+    <string name="switch2">Diag</string>
 </resources>

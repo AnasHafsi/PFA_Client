@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Switch;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -21,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void lance(View view) {
+        Switch simpleSwitch = (Switch) findViewById(R.id.switch2);
+        boolean isDiag = simpleSwitch.isChecked();
+        final String diag;
+        if (isDiag) diag ="1";
+        else diag="0";
         EditText txt = findViewById(R.id.txt);
         final String str = txt.getText().toString();
         EditText ip = findViewById(R.id.ip);
@@ -38,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                     Socket sc = new Socket(ip_a, 666);
                     BufferedWriter writer = new BufferedWriter(
                             new OutputStreamWriter(sc.getOutputStream()));
-                    sendStr = size + ";" + str + ";" + str_start + ";" + str_end;
+                    sendStr = size + ";" + str + ";" + str_start + ";" + str_end+";"+diag;
                     writer.write(sendStr);
                     writer.flush();
                     writer.close();
