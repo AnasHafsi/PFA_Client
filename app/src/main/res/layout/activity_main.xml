@@ -1,133 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E4E4E4"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/connect"
-        android:layout_width="104dp"
-        android:layout_height="105dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:onClick="lance"
-        android:text="@string/connect"
-        app:layout_constraintBottom_toTopOf="@+id/end"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.972"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ip" />
-
-    <EditText
-        android:id="@+id/size"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/sizeHint"
-        android:inputType="number"
-        app:layout_constraintEnd_toStartOf="@+id/connect"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt"
-        tools:targetApi="o" />
+        android:gravity="center"
+        android:lineSpacingExtra="8sp"
+        android:text="@string/textview"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
 
-    <EditText
-        android:id="@+id/start"
-        android:layout_width="97dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/start"
-        app:layout_constraintEnd_toStartOf="@+id/end"
-        app:layout_constraintHorizontal_bias="0.939"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/size"
-        tools:targetApi="o" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/end"
-        android:layout_width="101dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/end"
-        android:inputType=""
-        app:layout_constraintEnd_toStartOf="@+id/connect"
-        app:layout_constraintTop_toBottomOf="@+id/size"
-        tools:targetApi="o" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/txt"
-        android:layout_width="215dp"
-        android:layout_height="155dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/text_to_send"
-        android:inputType="none"
-        android:text="@string/textTS"
-        app:layout_constraintEnd_toStartOf="@+id/connect"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ip"
-        tools:targetApi="o" />
+            <EditText
+                android:id="@+id/txt"
+                android:layout_width="364dp"
+                android:layout_height="155dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/text_to_send"
+                android:inputType="none"
+                android:text="@string/textTS"
+                tools:layout_editor_absoluteX="38dp"
+                tools:layout_editor_absoluteY="61dp"
+                tools:targetApi="o" />
 
-    <EditText
-        android:id="@+id/ip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/HintIP"
-        android:inputType=""
-        android:text="@string/ipTxt"
-        app:layout_constraintEnd_toStartOf="@+id/connect"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:targetApi="o" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-    <Switch
-        android:id="@+id/switch2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="@string/switch2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toEndOf="@+id/end"
-        app:layout_constraintTop_toBottomOf="@+id/size" />
+                <EditText
+                    android:id="@+id/speed"
+                    android:layout_width="186dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Speed"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/size"
+                    android:layout_width="186dp"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="@string/sizeHint"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="39dp"
+                    tools:layout_editor_absoluteY="224dp"
+                    tools:targetApi="o" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/end"
+                    android:layout_width="101dp"
+                    android:layout_height="44dp"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="@string/end"
+                    android:inputType=""
+                    tools:layout_editor_absoluteX="146dp"
+                    tools:layout_editor_absoluteY="277dp"
+                    tools:targetApi="o" />
+
+                <EditText
+                    android:id="@+id/start"
+                    android:layout_width="97dp"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="@string/start"
+                    tools:layout_editor_absoluteX="39dp"
+                    tools:layout_editor_absoluteY="277dp"
+                    tools:targetApi="o" />
+
+                <Switch
+                    android:id="@+id/switch2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/switch2"
+                    tools:layout_editor_absoluteX="291dp"
+                    tools:layout_editor_absoluteY="293dp" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/ip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/HintIP"
+                android:inputType=""
+                android:text="@string/ipTxt"
+                tools:layout_editor_absoluteX="39dp"
+                tools:layout_editor_absoluteY="8dp"
+                tools:targetApi="o" />
+
+            <Button
+                android:id="@+id/connect"
+                android:layout_width="109dp"
+                android:layout_height="62dp"
+                android:layout_gravity="center_horizontal"
+                android:onClick="lance"
+                android:text="@string/connect"
+                tools:layout_editor_absoluteX="291dp"
+                tools:layout_editor_absoluteY="90dp" />
+
+        </LinearLayout>
+    </ScrollView>
 
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

@@ -10,4 +10,5 @@
     <string name="HintIP">ip address</string>
     <string name="sizeHint">size</string>
     <string name="switch2">Diag</string>
+    <string name="textview">Projet PFA</string>
 </resources>
